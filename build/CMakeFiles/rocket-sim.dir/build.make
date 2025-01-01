@@ -170,11 +170,39 @@ CMakeFiles/rocket-sim.dir/src/mpi/mpi_monte_carlo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/rocket-sim.dir/src/mpi/mpi_monte_carlo.cpp.s"
 	/usr/bin/mpicxx $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chughster/Code/RocketSimulator/src/mpi/mpi_monte_carlo.cpp -o CMakeFiles/rocket-sim.dir/src/mpi/mpi_monte_carlo.cpp.s
 
+CMakeFiles/rocket-sim.dir/src/visualization/renderer.cpp.o: CMakeFiles/rocket-sim.dir/flags.make
+CMakeFiles/rocket-sim.dir/src/visualization/renderer.cpp.o: /home/chughster/Code/RocketSimulator/src/visualization/renderer.cpp
+CMakeFiles/rocket-sim.dir/src/visualization/renderer.cpp.o: CMakeFiles/rocket-sim.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chughster/Code/RocketSimulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/rocket-sim.dir/src/visualization/renderer.cpp.o"
+	/usr/bin/mpicxx $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rocket-sim.dir/src/visualization/renderer.cpp.o -MF CMakeFiles/rocket-sim.dir/src/visualization/renderer.cpp.o.d -o CMakeFiles/rocket-sim.dir/src/visualization/renderer.cpp.o -c /home/chughster/Code/RocketSimulator/src/visualization/renderer.cpp
+
+CMakeFiles/rocket-sim.dir/src/visualization/renderer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/rocket-sim.dir/src/visualization/renderer.cpp.i"
+	/usr/bin/mpicxx $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chughster/Code/RocketSimulator/src/visualization/renderer.cpp > CMakeFiles/rocket-sim.dir/src/visualization/renderer.cpp.i
+
+CMakeFiles/rocket-sim.dir/src/visualization/renderer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/rocket-sim.dir/src/visualization/renderer.cpp.s"
+	/usr/bin/mpicxx $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chughster/Code/RocketSimulator/src/visualization/renderer.cpp -o CMakeFiles/rocket-sim.dir/src/visualization/renderer.cpp.s
+
+CMakeFiles/rocket-sim.dir/src/visualization/shader_loader.cpp.o: CMakeFiles/rocket-sim.dir/flags.make
+CMakeFiles/rocket-sim.dir/src/visualization/shader_loader.cpp.o: /home/chughster/Code/RocketSimulator/src/visualization/shader_loader.cpp
+CMakeFiles/rocket-sim.dir/src/visualization/shader_loader.cpp.o: CMakeFiles/rocket-sim.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chughster/Code/RocketSimulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/rocket-sim.dir/src/visualization/shader_loader.cpp.o"
+	/usr/bin/mpicxx $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rocket-sim.dir/src/visualization/shader_loader.cpp.o -MF CMakeFiles/rocket-sim.dir/src/visualization/shader_loader.cpp.o.d -o CMakeFiles/rocket-sim.dir/src/visualization/shader_loader.cpp.o -c /home/chughster/Code/RocketSimulator/src/visualization/shader_loader.cpp
+
+CMakeFiles/rocket-sim.dir/src/visualization/shader_loader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/rocket-sim.dir/src/visualization/shader_loader.cpp.i"
+	/usr/bin/mpicxx $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chughster/Code/RocketSimulator/src/visualization/shader_loader.cpp > CMakeFiles/rocket-sim.dir/src/visualization/shader_loader.cpp.i
+
+CMakeFiles/rocket-sim.dir/src/visualization/shader_loader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/rocket-sim.dir/src/visualization/shader_loader.cpp.s"
+	/usr/bin/mpicxx $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chughster/Code/RocketSimulator/src/visualization/shader_loader.cpp -o CMakeFiles/rocket-sim.dir/src/visualization/shader_loader.cpp.s
+
 CMakeFiles/rocket-sim.dir/src/cuda/aero_kernel.cu.o: CMakeFiles/rocket-sim.dir/flags.make
 CMakeFiles/rocket-sim.dir/src/cuda/aero_kernel.cu.o: CMakeFiles/rocket-sim.dir/includes_CUDA.rsp
 CMakeFiles/rocket-sim.dir/src/cuda/aero_kernel.cu.o: /home/chughster/Code/RocketSimulator/src/cuda/aero_kernel.cu
 CMakeFiles/rocket-sim.dir/src/cuda/aero_kernel.cu.o: CMakeFiles/rocket-sim.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chughster/Code/RocketSimulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CUDA object CMakeFiles/rocket-sim.dir/src/cuda/aero_kernel.cu.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chughster/Code/RocketSimulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CUDA object CMakeFiles/rocket-sim.dir/src/cuda/aero_kernel.cu.o"
 	/opt/cuda/bin/nvcc -forward-unknown-to-host-compiler $(CUDA_DEFINES) $(CUDA_INCLUDES) $(CUDA_FLAGS) -MD -MT CMakeFiles/rocket-sim.dir/src/cuda/aero_kernel.cu.o -MF CMakeFiles/rocket-sim.dir/src/cuda/aero_kernel.cu.o.d -x cu -c /home/chughster/Code/RocketSimulator/src/cuda/aero_kernel.cu -o CMakeFiles/rocket-sim.dir/src/cuda/aero_kernel.cu.o
 
 CMakeFiles/rocket-sim.dir/src/cuda/aero_kernel.cu.i: cmake_force
@@ -189,7 +217,7 @@ CMakeFiles/rocket-sim.dir/src/cuda/dynamics_kernel.cu.o: CMakeFiles/rocket-sim.d
 CMakeFiles/rocket-sim.dir/src/cuda/dynamics_kernel.cu.o: CMakeFiles/rocket-sim.dir/includes_CUDA.rsp
 CMakeFiles/rocket-sim.dir/src/cuda/dynamics_kernel.cu.o: /home/chughster/Code/RocketSimulator/src/cuda/dynamics_kernel.cu
 CMakeFiles/rocket-sim.dir/src/cuda/dynamics_kernel.cu.o: CMakeFiles/rocket-sim.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chughster/Code/RocketSimulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CUDA object CMakeFiles/rocket-sim.dir/src/cuda/dynamics_kernel.cu.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chughster/Code/RocketSimulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CUDA object CMakeFiles/rocket-sim.dir/src/cuda/dynamics_kernel.cu.o"
 	/opt/cuda/bin/nvcc -forward-unknown-to-host-compiler $(CUDA_DEFINES) $(CUDA_INCLUDES) $(CUDA_FLAGS) -MD -MT CMakeFiles/rocket-sim.dir/src/cuda/dynamics_kernel.cu.o -MF CMakeFiles/rocket-sim.dir/src/cuda/dynamics_kernel.cu.o.d -x cu -c /home/chughster/Code/RocketSimulator/src/cuda/dynamics_kernel.cu -o CMakeFiles/rocket-sim.dir/src/cuda/dynamics_kernel.cu.o
 
 CMakeFiles/rocket-sim.dir/src/cuda/dynamics_kernel.cu.i: cmake_force
@@ -204,7 +232,7 @@ CMakeFiles/rocket-sim.dir/src/cuda/env_kernel.cu.o: CMakeFiles/rocket-sim.dir/fl
 CMakeFiles/rocket-sim.dir/src/cuda/env_kernel.cu.o: CMakeFiles/rocket-sim.dir/includes_CUDA.rsp
 CMakeFiles/rocket-sim.dir/src/cuda/env_kernel.cu.o: /home/chughster/Code/RocketSimulator/src/cuda/env_kernel.cu
 CMakeFiles/rocket-sim.dir/src/cuda/env_kernel.cu.o: CMakeFiles/rocket-sim.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chughster/Code/RocketSimulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CUDA object CMakeFiles/rocket-sim.dir/src/cuda/env_kernel.cu.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chughster/Code/RocketSimulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CUDA object CMakeFiles/rocket-sim.dir/src/cuda/env_kernel.cu.o"
 	/opt/cuda/bin/nvcc -forward-unknown-to-host-compiler $(CUDA_DEFINES) $(CUDA_INCLUDES) $(CUDA_FLAGS) -MD -MT CMakeFiles/rocket-sim.dir/src/cuda/env_kernel.cu.o -MF CMakeFiles/rocket-sim.dir/src/cuda/env_kernel.cu.o.d -x cu -c /home/chughster/Code/RocketSimulator/src/cuda/env_kernel.cu -o CMakeFiles/rocket-sim.dir/src/cuda/env_kernel.cu.o
 
 CMakeFiles/rocket-sim.dir/src/cuda/env_kernel.cu.i: cmake_force
@@ -219,7 +247,7 @@ CMakeFiles/rocket-sim.dir/src/cuda/kernel_wrappers.cu.o: CMakeFiles/rocket-sim.d
 CMakeFiles/rocket-sim.dir/src/cuda/kernel_wrappers.cu.o: CMakeFiles/rocket-sim.dir/includes_CUDA.rsp
 CMakeFiles/rocket-sim.dir/src/cuda/kernel_wrappers.cu.o: /home/chughster/Code/RocketSimulator/src/cuda/kernel_wrappers.cu
 CMakeFiles/rocket-sim.dir/src/cuda/kernel_wrappers.cu.o: CMakeFiles/rocket-sim.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chughster/Code/RocketSimulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CUDA object CMakeFiles/rocket-sim.dir/src/cuda/kernel_wrappers.cu.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chughster/Code/RocketSimulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CUDA object CMakeFiles/rocket-sim.dir/src/cuda/kernel_wrappers.cu.o"
 	/opt/cuda/bin/nvcc -forward-unknown-to-host-compiler $(CUDA_DEFINES) $(CUDA_INCLUDES) $(CUDA_FLAGS) -MD -MT CMakeFiles/rocket-sim.dir/src/cuda/kernel_wrappers.cu.o -MF CMakeFiles/rocket-sim.dir/src/cuda/kernel_wrappers.cu.o.d -x cu -c /home/chughster/Code/RocketSimulator/src/cuda/kernel_wrappers.cu -o CMakeFiles/rocket-sim.dir/src/cuda/kernel_wrappers.cu.o
 
 CMakeFiles/rocket-sim.dir/src/cuda/kernel_wrappers.cu.i: cmake_force
@@ -239,6 +267,8 @@ rocket__sim_OBJECTS = \
 "CMakeFiles/rocket-sim.dir/src/cuda/kernel_wrappers.cpp.o" \
 "CMakeFiles/rocket-sim.dir/src/main.cpp.o" \
 "CMakeFiles/rocket-sim.dir/src/mpi/mpi_monte_carlo.cpp.o" \
+"CMakeFiles/rocket-sim.dir/src/visualization/renderer.cpp.o" \
+"CMakeFiles/rocket-sim.dir/src/visualization/shader_loader.cpp.o" \
 "CMakeFiles/rocket-sim.dir/src/cuda/aero_kernel.cu.o" \
 "CMakeFiles/rocket-sim.dir/src/cuda/dynamics_kernel.cu.o" \
 "CMakeFiles/rocket-sim.dir/src/cuda/env_kernel.cu.o" \
@@ -254,6 +284,8 @@ rocket-sim: CMakeFiles/rocket-sim.dir/src/core/rocket.cpp.o
 rocket-sim: CMakeFiles/rocket-sim.dir/src/cuda/kernel_wrappers.cpp.o
 rocket-sim: CMakeFiles/rocket-sim.dir/src/main.cpp.o
 rocket-sim: CMakeFiles/rocket-sim.dir/src/mpi/mpi_monte_carlo.cpp.o
+rocket-sim: CMakeFiles/rocket-sim.dir/src/visualization/renderer.cpp.o
+rocket-sim: CMakeFiles/rocket-sim.dir/src/visualization/shader_loader.cpp.o
 rocket-sim: CMakeFiles/rocket-sim.dir/src/cuda/aero_kernel.cu.o
 rocket-sim: CMakeFiles/rocket-sim.dir/src/cuda/dynamics_kernel.cu.o
 rocket-sim: CMakeFiles/rocket-sim.dir/src/cuda/env_kernel.cu.o
@@ -262,12 +294,17 @@ rocket-sim: CMakeFiles/rocket-sim.dir/build.make
 rocket-sim: CMakeFiles/rocket-sim.dir/compiler_depend.ts
 rocket-sim: /opt/cuda/lib64/libcudart_static.a
 rocket-sim: /usr/lib/librt.a
+rocket-sim: /usr/lib/libGLEW.so
+rocket-sim: /usr/lib/libglfw.so.3.4
 rocket-sim: /usr/lib/libgomp.so
 rocket-sim: /usr/lib/libpthread.a
 rocket-sim: /usr/lib/libmpi.so
+rocket-sim: /usr/lib/libGLX.so
+rocket-sim: /usr/lib/libOpenGL.so
 rocket-sim: CMakeFiles/rocket-sim.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/chughster/Code/RocketSimulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable rocket-sim"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/chughster/Code/RocketSimulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable rocket-sim"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/rocket-sim.dir/link.txt --verbose=$(VERBOSE)
+	/usr/bin/cmake -E copy_directory /home/chughster/Code/RocketSimulator/src/visualization/shaders /home/chughster/Code/RocketSimulator/build/shaders
 
 # Rule to build all files generated by this target.
 CMakeFiles/rocket-sim.dir/build: rocket-sim

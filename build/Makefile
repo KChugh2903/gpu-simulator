@@ -403,6 +403,54 @@ src/mpi/mpi_monte_carlo.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocket-sim.dir/build.make CMakeFiles/rocket-sim.dir/src/mpi/mpi_monte_carlo.cpp.s
 .PHONY : src/mpi/mpi_monte_carlo.cpp.s
 
+src/visualization/renderer.o: src/visualization/renderer.cpp.o
+.PHONY : src/visualization/renderer.o
+
+# target to build an object file
+src/visualization/renderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocket-sim.dir/build.make CMakeFiles/rocket-sim.dir/src/visualization/renderer.cpp.o
+.PHONY : src/visualization/renderer.cpp.o
+
+src/visualization/renderer.i: src/visualization/renderer.cpp.i
+.PHONY : src/visualization/renderer.i
+
+# target to preprocess a source file
+src/visualization/renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocket-sim.dir/build.make CMakeFiles/rocket-sim.dir/src/visualization/renderer.cpp.i
+.PHONY : src/visualization/renderer.cpp.i
+
+src/visualization/renderer.s: src/visualization/renderer.cpp.s
+.PHONY : src/visualization/renderer.s
+
+# target to generate assembly for a file
+src/visualization/renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocket-sim.dir/build.make CMakeFiles/rocket-sim.dir/src/visualization/renderer.cpp.s
+.PHONY : src/visualization/renderer.cpp.s
+
+src/visualization/shader_loader.o: src/visualization/shader_loader.cpp.o
+.PHONY : src/visualization/shader_loader.o
+
+# target to build an object file
+src/visualization/shader_loader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocket-sim.dir/build.make CMakeFiles/rocket-sim.dir/src/visualization/shader_loader.cpp.o
+.PHONY : src/visualization/shader_loader.cpp.o
+
+src/visualization/shader_loader.i: src/visualization/shader_loader.cpp.i
+.PHONY : src/visualization/shader_loader.i
+
+# target to preprocess a source file
+src/visualization/shader_loader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocket-sim.dir/build.make CMakeFiles/rocket-sim.dir/src/visualization/shader_loader.cpp.i
+.PHONY : src/visualization/shader_loader.cpp.i
+
+src/visualization/shader_loader.s: src/visualization/shader_loader.cpp.s
+.PHONY : src/visualization/shader_loader.s
+
+# target to generate assembly for a file
+src/visualization/shader_loader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocket-sim.dir/build.make CMakeFiles/rocket-sim.dir/src/visualization/shader_loader.cpp.s
+.PHONY : src/visualization/shader_loader.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -446,6 +494,12 @@ help:
 	@echo "... src/mpi/mpi_monte_carlo.o"
 	@echo "... src/mpi/mpi_monte_carlo.i"
 	@echo "... src/mpi/mpi_monte_carlo.s"
+	@echo "... src/visualization/renderer.o"
+	@echo "... src/visualization/renderer.i"
+	@echo "... src/visualization/renderer.s"
+	@echo "... src/visualization/shader_loader.o"
+	@echo "... src/visualization/shader_loader.i"
+	@echo "... src/visualization/shader_loader.s"
 .PHONY : help
 
 

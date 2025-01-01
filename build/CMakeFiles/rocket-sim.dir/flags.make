@@ -11,7 +11,7 @@ CUDA_FLAGS =  -Xcompiler -fopenmp -std=c++17 "--generate-code=arch=compute_75,co
 
 CXX_DEFINES = -DOMPI_SKIP_MPICXX
 
-CXX_INCLUDES = -I/home/chughster/Code/RocketSimulator/include -I/home/chughster/Code/RocketSimulator/include/rocket/core -I/home/chughster/Code/RocketSimulator/include/rocket/cuda -I/home/chughster/Code/RocketSimulator/include/rocket/mpi -I/home/chughster/Code/RocketSimulator/src -I/home/chughster/Code/RocketSimulator/include/third_party/cuda-samples/Common -I/opt/cuda/include -I/opt/cuda/targets/x86_64-linux/include -isystem /usr/include/eigen3
+CXX_INCLUDES = -I/home/chughster/Code/RocketSimulator/include -I/home/chughster/Code/RocketSimulator/include/rocket/core -I/home/chughster/Code/RocketSimulator/include/rocket/cuda -I/home/chughster/Code/RocketSimulator/include/rocket/mpi -I/home/chughster/Code/RocketSimulator/src -I/home/chughster/Code/RocketSimulator/include/third_party/cuda-samples/Common -I/opt/cuda/include -I/opt/cuda/targets/x86_64-linux/include -I/home/chughster/Code/RocketSimulator/include/rocket/visualization -I/usr/include/glm -isystem /usr/include/eigen3
 
 CXX_FLAGS = -std=gnu++17 -Wall -Wextra -Wpedantic -O3 -fopenmp
 

@@ -12,6 +12,9 @@ find_package(CUDA REQUIRED)
 find_package(Eigen3 REQUIRED)
 find_package(OpenMP REQUIRED)
 find_package(MPI REQUIRED)   # Add MPI package
+find_package(OpenGL REQUIRED)
+find_package(GLEW REQUIRED)
+find_package(glfw3 REQUIRED)
 
 # Configure CUDA
 set(CMAKE_CUDA_ARCHITECTURES 75)
@@ -29,6 +32,16 @@ include_directories(
     ${CUDA_INCLUDE_DIRS}
     ${MPI_CXX_INCLUDE_DIRS}    # Add MPI include directories
     /opt/cuda/targets/x86_64-linux/include
+    ${PROJECT_SOURCE_DIR}/include/rocket/visualization
+    ${OPENGL_INCLUDE_DIRS}
+    ${GLEW_INCLUDE_DIRS}
+)
+
+# Replace find_package(GLM REQUIRED) with:
+include_directories(/usr/include/glm)
+
+file(GLOB_RECURSE VIS_SOURCES 
+    "src/visualization/*.cpp"
 )
 
 # Source files
@@ -53,7 +66,8 @@ set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -Xcompiler -fopenmp")
 add_executable(rocket-sim
     ${CORE_SOURCES}
     ${CUDA_SOURCES}
-    ${MPI_SOURCES}            # Add MPI sources to executable
+    ${MPI_SOURCES} 
+    ${VIS_SOURCES}
 )
 
 # Link libraries
@@ -63,7 +77,10 @@ target_link_libraries(rocket-sim
     OpenMP::OpenMP_CXX
     ${CUDA_LIBRARIES}
     cudart
-    MPI::MPI_CXX             # Add MPI library
+    MPI::MPI_CXX
+    OpenGL::GL
+    GLEW::GLEW
+    glfw
 )
 
 # Set compile options
@@ -97,3 +114,9 @@ endif()
 enable_testing()
 add_test(NAME mpi_test
          COMMAND mpirun -np 4 $<TARGET_FILE:rocket-sim>)
+
+add_custom_command(TARGET rocket-sim POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+    ${CMAKE_SOURCE_DIR}/src/visualization/shaders
+    $<TARGET_FILE_DIR:rocket-sim>/shaders
+)

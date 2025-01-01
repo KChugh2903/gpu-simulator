@@ -22,6 +22,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/rocket-sim.dir/src/main.cpp.o.d"
   "CMakeFiles/rocket-sim.dir/src/mpi/mpi_monte_carlo.cpp.o"
   "CMakeFiles/rocket-sim.dir/src/mpi/mpi_monte_carlo.cpp.o.d"
+  "CMakeFiles/rocket-sim.dir/src/visualization/renderer.cpp.o"
+  "CMakeFiles/rocket-sim.dir/src/visualization/renderer.cpp.o.d"
+  "CMakeFiles/rocket-sim.dir/src/visualization/shader_loader.cpp.o"
+  "CMakeFiles/rocket-sim.dir/src/visualization/shader_loader.cpp.o.d"
   "rocket-sim"
   "rocket-sim.pdb"
 )
