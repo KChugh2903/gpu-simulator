@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "includePath": [
+                "${workspaceFolder}/include",
+                "${workspaceFolder}/include/rocket/core",
+                "${workspaceFolder}/include/rocket/cuda",
+                "${workspaceFolder}/src",
+                "/usr/include/eigen3",
+                "/usr/local/cuda/include",
+                "${workspaceFolder}/include/third_party/cuda-samples/Common",
+                "/opt/cuda/targets/x86_64-linux/include"
+            ],
+            "intelliSenseMode": "linux-gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c17",
+            "cppStandard": "gnu++17"
+        }
+    ],
+    "version": 4
+}
