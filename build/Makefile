@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /home/chughster/Code/RocketSimulator/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
@@ -345,6 +355,54 @@ src/cuda/kernel_wrappers.cu.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocket-sim.dir/build.make CMakeFiles/rocket-sim.dir/src/cuda/kernel_wrappers.cu.s
 .PHONY : src/cuda/kernel_wrappers.cu.s
 
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocket-sim.dir/build.make CMakeFiles/rocket-sim.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocket-sim.dir/build.make CMakeFiles/rocket-sim.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocket-sim.dir/build.make CMakeFiles/rocket-sim.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
+src/mpi/mpi_monte_carlo.o: src/mpi/mpi_monte_carlo.cpp.o
+.PHONY : src/mpi/mpi_monte_carlo.o
+
+# target to build an object file
+src/mpi/mpi_monte_carlo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocket-sim.dir/build.make CMakeFiles/rocket-sim.dir/src/mpi/mpi_monte_carlo.cpp.o
+.PHONY : src/mpi/mpi_monte_carlo.cpp.o
+
+src/mpi/mpi_monte_carlo.i: src/mpi/mpi_monte_carlo.cpp.i
+.PHONY : src/mpi/mpi_monte_carlo.i
+
+# target to preprocess a source file
+src/mpi/mpi_monte_carlo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocket-sim.dir/build.make CMakeFiles/rocket-sim.dir/src/mpi/mpi_monte_carlo.cpp.i
+.PHONY : src/mpi/mpi_monte_carlo.cpp.i
+
+src/mpi/mpi_monte_carlo.s: src/mpi/mpi_monte_carlo.cpp.s
+.PHONY : src/mpi/mpi_monte_carlo.s
+
+# target to generate assembly for a file
+src/mpi/mpi_monte_carlo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocket-sim.dir/build.make CMakeFiles/rocket-sim.dir/src/mpi/mpi_monte_carlo.cpp.s
+.PHONY : src/mpi/mpi_monte_carlo.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -353,6 +411,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... rocket-sim"
 	@echo "... src/core/dynamics.o"
 	@echo "... src/core/dynamics.i"
@@ -381,6 +440,12 @@ help:
 	@echo "... src/cuda/kernel_wrappers.o"
 	@echo "... src/cuda/kernel_wrappers.i"
 	@echo "... src/cuda/kernel_wrappers.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
+	@echo "... src/mpi/mpi_monte_carlo.o"
+	@echo "... src/mpi/mpi_monte_carlo.i"
+	@echo "... src/mpi/mpi_monte_carlo.s"
 .PHONY : help
 
 

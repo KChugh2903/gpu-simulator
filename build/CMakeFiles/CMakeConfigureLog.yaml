@@ -1138,3 +1138,214 @@ events:
         
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1283 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1327 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1650 (_MPI_check_lang_works)"
+      - "CMakeLists.txt:14 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-zNDrNQ"
+      binary: "/home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-zNDrNQ"
+    cmakeVariables:
+      CMAKE_CUDA_ARCHITECTURES: "52"
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-zNDrNQ'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_09e75/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_09e75.dir/build.make CMakeFiles/cmTC_09e75.dir/build
+        make[1]: Entering directory '/home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-zNDrNQ'
+        Building CXX object CMakeFiles/cmTC_09e75.dir/test_mpi.cpp.o
+        /usr/bin/c++   -std=gnu++17 -o CMakeFiles/cmTC_09e75.dir/test_mpi.cpp.o -c /home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-zNDrNQ/test_mpi.cpp
+        Linking CXX executable cmTC_09e75
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_09e75.dir/link.txt --verbose=1
+        /usr/bin/c++ -Wl,-rpath -Wl,/usr/lib -Wl,--enable-new-dtags CMakeFiles/cmTC_09e75.dir/test_mpi.cpp.o -o cmTC_09e75  /usr/lib/libmpi.so
+        make[1]: Leaving directory '/home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-zNDrNQ'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1283 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1677 (_MPI_try_staged_settings)"
+      - "CMakeLists.txt:14 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-uAkBpq"
+      binary: "/home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-uAkBpq"
+    cmakeVariables:
+      CMAKE_CUDA_ARCHITECTURES: "52"
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: '/home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-uAkBpq'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_df684/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_df684.dir/build.make CMakeFiles/cmTC_df684.dir/build
+        make[1]: Entering directory '/home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-uAkBpq'
+        Building CXX object CMakeFiles/cmTC_df684.dir/test_mpi.cpp.o
+        /usr/bin/c++   -std=gnu++17 -o CMakeFiles/cmTC_df684.dir/test_mpi.cpp.o -c /home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-uAkBpq/test_mpi.cpp
+        Linking CXX executable cmTC_df684
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_df684.dir/link.txt --verbose=1
+        /usr/bin/c++ -Wl,-rpath -Wl,/usr/lib -Wl,--enable-new-dtags CMakeFiles/cmTC_df684.dir/test_mpi.cpp.o -o cmTC_df684  /usr/lib/libmpi.so
+        make[1]: Leaving directory '/home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-uAkBpq'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1283 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1327 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1650 (_MPI_check_lang_works)"
+      - "CMakeLists.txt:14 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-KGAKYW"
+      binary: "/home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-KGAKYW"
+    cmakeVariables:
+      CMAKE_CUDA_ARCHITECTURES: "52"
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-KGAKYW'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_91a94/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_91a94.dir/build.make CMakeFiles/cmTC_91a94.dir/build
+        make[1]: Entering directory '/home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-KGAKYW'
+        Building CXX object CMakeFiles/cmTC_91a94.dir/test_mpi.cpp.o
+        /usr/bin/c++   -std=gnu++17 -o CMakeFiles/cmTC_91a94.dir/test_mpi.cpp.o -c /home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-KGAKYW/test_mpi.cpp
+        Linking CXX executable cmTC_91a94
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_91a94.dir/link.txt --verbose=1
+        /usr/bin/c++ -Wl,-rpath -Wl,/usr/lib -Wl,--enable-new-dtags CMakeFiles/cmTC_91a94.dir/test_mpi.cpp.o -o cmTC_91a94  /usr/lib/libmpi.so
+        make[1]: Leaving directory '/home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-KGAKYW'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1283 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1677 (_MPI_try_staged_settings)"
+      - "CMakeLists.txt:14 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-QJhiLL"
+      binary: "/home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-QJhiLL"
+    cmakeVariables:
+      CMAKE_CUDA_ARCHITECTURES: "52"
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: '/home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-QJhiLL'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_8a377/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_8a377.dir/build.make CMakeFiles/cmTC_8a377.dir/build
+        make[1]: Entering directory '/home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-QJhiLL'
+        Building CXX object CMakeFiles/cmTC_8a377.dir/test_mpi.cpp.o
+        /usr/bin/c++   -std=gnu++17 -o CMakeFiles/cmTC_8a377.dir/test_mpi.cpp.o -c /home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-QJhiLL/test_mpi.cpp
+        Linking CXX executable cmTC_8a377
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8a377.dir/link.txt --verbose=1
+        /usr/bin/c++ -Wl,-rpath -Wl,/usr/lib -Wl,--enable-new-dtags CMakeFiles/cmTC_8a377.dir/test_mpi.cpp.o -o cmTC_8a377  /usr/lib/libmpi.so
+        make[1]: Leaving directory '/home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-QJhiLL'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1283 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1327 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1650 (_MPI_check_lang_works)"
+      - "CMakeLists.txt:14 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-2kW18m"
+      binary: "/home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-2kW18m"
+    cmakeVariables:
+      CMAKE_CUDA_ARCHITECTURES: "52"
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-2kW18m'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_c2482/fast
+        make[1]: Entering directory '/home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-2kW18m'
+        /usr/bin/make  -f CMakeFiles/cmTC_c2482.dir/build.make CMakeFiles/cmTC_c2482.dir/build
+        make[2]: Entering directory '/home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-2kW18m'
+        Building CXX object CMakeFiles/cmTC_c2482.dir/test_mpi.cpp.o
+        /usr/bin/c++   -std=gnu++17 -o CMakeFiles/cmTC_c2482.dir/test_mpi.cpp.o -c /home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-2kW18m/test_mpi.cpp
+        Linking CXX executable cmTC_c2482
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c2482.dir/link.txt --verbose=1
+        /usr/bin/c++ -Wl,-rpath -Wl,/usr/lib -Wl,--enable-new-dtags CMakeFiles/cmTC_c2482.dir/test_mpi.cpp.o -o cmTC_c2482  /usr/lib/libmpi.so
+        make[2]: Leaving directory '/home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-2kW18m'
+        make[1]: Leaving directory '/home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-2kW18m'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1283 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1677 (_MPI_try_staged_settings)"
+      - "CMakeLists.txt:14 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-sE1f07"
+      binary: "/home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-sE1f07"
+    cmakeVariables:
+      CMAKE_CUDA_ARCHITECTURES: "52"
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: '/home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-sE1f07'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_95618/fast
+        make[1]: Entering directory '/home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-sE1f07'
+        /usr/bin/make  -f CMakeFiles/cmTC_95618.dir/build.make CMakeFiles/cmTC_95618.dir/build
+        make[2]: Entering directory '/home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-sE1f07'
+        Building CXX object CMakeFiles/cmTC_95618.dir/test_mpi.cpp.o
+        /usr/bin/c++   -std=gnu++17 -o CMakeFiles/cmTC_95618.dir/test_mpi.cpp.o -c /home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-sE1f07/test_mpi.cpp
+        Linking CXX executable cmTC_95618
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_95618.dir/link.txt --verbose=1
+        /usr/bin/c++ -Wl,-rpath -Wl,/usr/lib -Wl,--enable-new-dtags CMakeFiles/cmTC_95618.dir/test_mpi.cpp.o -o cmTC_95618  /usr/lib/libmpi.so
+        make[2]: Leaving directory '/home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-sE1f07'
+        make[1]: Leaving directory '/home/chughster/Code/RocketSimulator/build/CMakeFiles/CMakeScratch/TryCompile-sE1f07'
+        
+      exitCode: 0
+...

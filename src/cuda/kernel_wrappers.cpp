@@ -118,7 +118,3 @@ void launchEnvironmentKernel(
         );
     }
 }
-
-int main() {
-    return 0;
-}

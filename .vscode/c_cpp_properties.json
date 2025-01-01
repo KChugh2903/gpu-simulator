@@ -5,6 +5,7 @@
                 "${workspaceFolder}/include",
                 "${workspaceFolder}/include/rocket/core",
                 "${workspaceFolder}/include/rocket/cuda",
+                "${workspaceFolder}/include/rocket/mpi",
                 "${workspaceFolder}/src",
                 "/usr/include/eigen3",
                 "/usr/local/cuda/include",

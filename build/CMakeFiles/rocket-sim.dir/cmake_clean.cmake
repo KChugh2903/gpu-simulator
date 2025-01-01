@@ -18,6 +18,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/rocket-sim.dir/src/cuda/kernel_wrappers.cpp.o.d"
   "CMakeFiles/rocket-sim.dir/src/cuda/kernel_wrappers.cu.o"
   "CMakeFiles/rocket-sim.dir/src/cuda/kernel_wrappers.cu.o.d"
+  "CMakeFiles/rocket-sim.dir/src/main.cpp.o"
+  "CMakeFiles/rocket-sim.dir/src/main.cpp.o.d"
+  "CMakeFiles/rocket-sim.dir/src/mpi/mpi_monte_carlo.cpp.o"
+  "CMakeFiles/rocket-sim.dir/src/mpi/mpi_monte_carlo.cpp.o.d"
   "rocket-sim"
   "rocket-sim.pdb"
 )

@@ -117,7 +117,7 @@ double Environment::interpolateData(double altitude, DataType type) const {
     auto prev = std::prev(it);
     double ratio = (altitude - prev->altitude) / (it->altitude - prev->altitude);
 
-    double val1, val2;
+    double val1 = 0.0, val2 = 0.0;
     switch(type) {
         case DataType::DENSITY:
             val1 = prev->density;

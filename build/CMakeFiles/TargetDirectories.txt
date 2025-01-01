@@ -1,3 +1,4 @@
 /home/chughster/Code/RocketSimulator/build/CMakeFiles/rocket-sim.dir
+/home/chughster/Code/RocketSimulator/build/CMakeFiles/test.dir
 /home/chughster/Code/RocketSimulator/build/CMakeFiles/edit_cache.dir
 /home/chughster/Code/RocketSimulator/build/CMakeFiles/rebuild_cache.dir
