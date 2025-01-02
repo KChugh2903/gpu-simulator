@@ -5,17 +5,15 @@ Dynamics::Dynamics(std::shared_ptr<Rocket> rocket) : rocket(rocket) {}
 
 Dynamics::State Dynamics::computeStateDerivatives(const State& state, double t) {
     State derivatives;
-    const double g = 9.81; // m/s^2
+    const double g = 9.81; 
     double burnTime = rocket->getBurnTime();
     double massFraction = (t < burnTime) ? 
         (rocket->getWetMass() - rocket->getDryMass()) * (burnTime - t) / burnTime : 0.0;
     double currentMass = rocket->getDryMass() + massFraction;
     double thrust = rocket->getThrust(t);
     Eigen::Matrix3d R = quaternionToRotationMatrix(state.quaternion);
-
-    // Forces in body frame
     Eigen::Vector3d gravity = R * Eigen::Vector3d(0, 0, -currentMass * g);
-    Eigen::Vector3d thrustForce(0.95 * thrust, 0, 0); // 95% thrust efficiency as per MATLAB
+    Eigen::Vector3d thrustForce(0.95 * thrust, 0, 0); 
 
     #pragma omp parallel sections
     {

@@ -62,19 +62,11 @@ public:
         Quaternion orientation;
         Vector3 angularVelocity;
     };
-
-    // Constructor/Destructor
     CUDAKernelWrapper();
     ~CUDAKernelWrapper();
-
-    // Delete copy operations
     CUDAKernelWrapper(const CUDAKernelWrapper&) = delete;
     CUDAKernelWrapper& operator=(const CUDAKernelWrapper&) = delete;
-
-    // Initialize CUDA resources
     void initialize(size_t maxBatchSize = 1024);
-
-    // Core computation methods
     void computeDynamicsBatch(
         const std::vector<RocketState>& states,
         std::vector<RocketState>& nextStates,

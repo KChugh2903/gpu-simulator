@@ -47,7 +47,7 @@ struct CUDAQuaternion {
         : w(_w), x(_x), y(_y), z(_z) {}
 };
 
-// CUDA state structure
+
 struct CUDARocketState {
     CUDAVector3 position;
     CUDAVector3 velocity;

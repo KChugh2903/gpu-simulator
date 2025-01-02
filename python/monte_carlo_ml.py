@@ -37,13 +37,9 @@ class EnvironmentGenerator:
         self.elevation = elevation
         self.max_altitude = 20000
         self.num_points = 2000
-        
-        # Initialize PyTorch model
         self.model = AtmosphericNN()
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.model.to(self.device)
-        
-        # Initialize RocketPy environment
         self.tomorrow = datetime.now() + timedelta(days=1)
         self.env = Environment(
             latitude=self.latitude,
@@ -59,8 +55,8 @@ class EnvironmentGenerator:
         altitudes = np.linspace(0, self.max_altitude, self.num_points)
         latitudes = np.linspace(self.latitude - 1, self.latitude + 1, 10)
         
-        X = []  # Input features: altitude, latitude
-        y = []  # Output features: atmospheric properties
+        X = [] 
+        y = []  
         
         for lat in latitudes:
             for alt in altitudes:
@@ -80,29 +76,22 @@ class EnvironmentGenerator:
         X, y = self.generate_training_data()
         X = X.to(self.device)
         y = y.to(self.device)
-        
         criterion = nn.MSELoss()
         optimizer = optim.Adam(self.model.parameters())
-        
         n_batches = len(X) // batch_size
-        
         for epoch in range(epochs):
             total_loss = 0
             for i in range(n_batches):
                 start_idx = i * batch_size
                 end_idx = start_idx + batch_size
-                
                 batch_X = X[start_idx:end_idx]
                 batch_y = y[start_idx:end_idx]
-                
                 optimizer.zero_grad()
                 outputs = self.model(batch_X)
                 loss = criterion(outputs, batch_y)
                 loss.backward()
                 optimizer.step()
-                
                 total_loss += loss.item()
-            
             if (epoch + 1) % 10 == 0:
                 print(f'Epoch [{epoch+1}/{epochs}], Loss: {total_loss/n_batches:.4f}')
     
@@ -110,13 +99,11 @@ class EnvironmentGenerator:
         """Generate environment data using the trained model"""
         altitudes = np.linspace(0, self.max_altitude, self.num_points)
         data = []
-        
         with torch.no_grad():
             for altitude in altitudes:
                 input_data = torch.tensor([[altitude, self.latitude]], dtype=torch.float32).to(self.device)
                 output = self.model(input_data)
                 density, pressure, temperature, speed_of_sound, wind_speed = output[0].cpu().numpy()
-                
                 data.append({
                     'Altitude': altitude,
                     'Density': density,
@@ -156,10 +143,7 @@ def main():
     parser.add_argument("longitude", type=float, help="Longitude of the launch site (degrees)")
     parser.add_argument("launch_altitude", type=float, help="Launch altitude of the site (meters)")
     parser.add_argument("--train", action="store_true", help="Train the neural network model")
-    
     args = parser.parse_args()
-    
-    # Create environment generator
     env_gen = EnvironmentGenerator(args.latitude, args.longitude, args.launch_altitude)
     
     if args.train:

@@ -22,23 +22,16 @@ void Environment::initializeAtmosphericData(bool useDefaultData) {
 }
 
 void Environment::loadDefaultData() {
-    // Load data from the default CSV file
     std::ifstream file("EnvironmentData_default.csv");
     if (!file.is_open()) {
         throw std::runtime_error("Failed to open default environment data file");
     }
-
-    // Skip header
     std::string line;
     std::getline(file, line);
-
-    // Read data
     while (std::getline(file, line)) {
         std::stringstream ss(line);
         AtmosphericData data;
         std::string value;
-
-        // Read each column
         std::getline(ss, value, ',');
         data.altitude = std::stod(value);
         std::getline(ss, value, ',');
@@ -51,37 +44,28 @@ void Environment::loadDefaultData() {
         data.speedOfSound = std::stod(value);
         std::getline(ss, value, ',');
         data.windSpeed = std::stod(value);
-
         atmosphericTable.push_back(data);
     }
 }
 
 void Environment::generateEnvironmentData() {
-    // Generate atmospheric data using standard atmosphere model
     const int numPoints = 2000;
     const double maxAltitude = 20000.0;
 
     for (int i = 0; i < numPoints; ++i) {
         AtmosphericData data;
         data.altitude = i * maxAltitude / numPoints;
-
-        // Standard atmosphere calculations
         double h = data.altitude / 1000.0; // km
         if (h <= 11.0) {
-            // Troposphere
             data.temperature = 288.15 - 6.5 * h;
             data.pressure = 101325.0 * std::pow(288.15 / (288.15 - 6.5 * h), -5.255877);
         } else {
-            // Stratosphere
             data.temperature = 216.65;
             data.pressure = 22632.1 * std::exp(-0.1577 * (h - 11.0));
         }
-
-        // Derived quantities
         data.density = data.pressure / (287.05 * data.temperature);
         data.speedOfSound = std::sqrt(1.4 * 287.05 * data.temperature);
-        data.windSpeed = 0.0; // Base wind speed, modified by wind parameters
-
+        data.windSpeed = 0.0;
         atmosphericTable.push_back(data);
     }
 }
@@ -144,7 +128,6 @@ double Environment::interpolateData(double altitude, DataType type) const {
     return val1 + ratio * (val2 - val1);
 }
 
-// Then modify the getter methods:
 double Environment::getDensity(double altitude) const {
     return interpolateData(altitude, DataType::DENSITY);
 }

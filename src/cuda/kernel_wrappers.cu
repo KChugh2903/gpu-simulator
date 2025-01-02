@@ -20,17 +20,14 @@ __global__ void integrateStatesKernel(
     const CUDARocketState& state = states[idx];
     CUDARocketState& next = nextStates[idx];
 
-    // Position integration
     next.position.x = state.position.x + state.velocity.x * dt;
     next.position.y = state.position.y + state.velocity.y * dt;
     next.position.z = state.position.z + state.velocity.z * dt;
 
-    // Velocity integration (with gravity)
     next.velocity.x = state.velocity.x;
     next.velocity.y = state.velocity.y;
     next.velocity.z = state.velocity.z - 9.8 * dt;
 
-    // Quaternion integration
     float halfDt = 0.5f * dt;
     CUDAQuaternion omega(0,
         state.angularVelocity.x * halfDt,
@@ -53,7 +50,6 @@ __global__ void computeAerodynamicsKernel(
     int idx = blockIdx.x * blockDim.x + threadIdx.x;
     if (idx >= numStates) return;
 
-    // Your existing kernel implementation
     const CUDARocketState& state = states[idx];
     float velocity = state.velocity.norm();
     float dynamicPressure = 0.5f * d_airDensity * velocity * velocity;
@@ -63,8 +59,8 @@ __global__ void computeAerodynamicsKernel(
     forces[idx].z = -dynamicPressure * sinf(state.beta);
 
     moments[idx].x = 0.0f;  // Roll moment
-    moments[idx].y = -dynamicPressure * sinf(state.alpha);  // Pitch moment
-    moments[idx].z = -dynamicPressure * sinf(state.beta);   // Yaw moment
+    moments[idx].y = -dynamicPressure * sinf(state.alpha); 
+    moments[idx].z = -dynamicPressure * sinf(state.beta);   
 }
 
 __global__ void computeEnvironmentKernel(
@@ -76,11 +72,7 @@ __global__ void computeEnvironmentKernel(
 ) {
     int idx = blockIdx.x * blockDim.x + threadIdx.x;
     if (idx >= numPoints) return;
-
-    // Your existing kernel implementation
     float altitude = positions[idx].z;
-    
-    // Linear interpolation in the tables
     int tableIdx = 0;
     while (tableIdx < 999 && d_altitudeTable[tableIdx + 1] < altitude) tableIdx++;
     
@@ -95,7 +87,6 @@ __global__ void computeEnvironmentKernel(
     winds[idx] = CUDAVector3(windSpeed, 0.0f, 0.0f);
 }
 
-// C-linkage wrappers to be called from C++
 extern "C" {
     void integrateStatesKernel_wrapper(
         const void* states, 
@@ -144,11 +135,8 @@ extern "C" {
         void* winds, 
         int numPoints
     ) {
-        // Calculate grid and block dimensions
         int threadsPerBlock = 256;
         int blocksPerGrid = (numPoints + threadsPerBlock - 1) / threadsPerBlock;
-
-        // Launch kernel
         computeEnvironmentKernel<<<blocksPerGrid, threadsPerBlock>>>(
             static_cast<const CUDAVector3*>(positions),
             static_cast<float*>(densities),

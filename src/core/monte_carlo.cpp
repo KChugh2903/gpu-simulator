@@ -17,16 +17,16 @@ std::vector<MonteCarlo::SimulationResult> MonteCarlo::runSimulations(int numRuns
         try {
             auto rocket = generateRandomRocket();
             auto windParams = generateRandomWind();
-            Environment env(0.0, 0.0, 0.0); // Default location
+            Environment env(0.0, 0.0, 0.0); 
             env.addWindParameter(windParams.gustSpeed,
                                windParams.gustLength, params.environmentParams.gustLength_3sigma);
             Dynamics dynamics(rocket);
             Dynamics::State state;
             state.position = Eigen::Vector3d(0, 0, 0);
-            state.velocity = Eigen::Vector3d(0.001, 0, 0);  // Small initial velocity
-            state.quaternion = Eigen::Vector4d(1, 0, 0, 0); // Initially vertical
-            const double dt = 0.001;  // Time step
-            const double maxTime = rocket->getBurnTime() * 1.5;  // Simulate past burnout
+            state.velocity = Eigen::Vector3d(0.001, 0, 0);  
+            state.quaternion = Eigen::Vector4d(1, 0, 0, 0); 
+            const double dt = 0.001;
+            const double maxTime = rocket->getBurnTime() * 1.5; 
             std::vector<Dynamics::State> trajectory;
             double maxAlt = 0.0;
             double maxVel = 0.0;
@@ -150,20 +150,14 @@ Dynamics::State Dynamics::integrate(const State& state, double dt) {
     k4_intermediate.quaternion = integrateQuaternion(state.quaternion, state.angularVel + dt * k3.angularVel, dt);
     k4_intermediate.angularVel = state.angularVel + dt * k3.angularVel;
     State k4 = computeStateDerivatives(k4_intermediate, dt);
-    
-    // Combine derivatives with weighted average
     State nextState;
     nextState.position = state.position + (dt / 6.0) * (k1.position + 2 * k2.position + 2 * k3.position + k4.position);
     nextState.velocity = state.velocity + (dt / 6.0) * (k1.velocity + 2 * k2.velocity + 2 * k3.velocity + k4.velocity);
     nextState.angularVel = state.angularVel + (dt / 6.0) * (k1.angularVel + 2 * k2.angularVel + 2 * k3.angularVel + k4.angularVel);
-    
-    // Special handling for quaternion integration
     Eigen::Vector4d q1 = integrateQuaternion(state.quaternion, state.angularVel, dt/6.0);
     Eigen::Vector4d q2 = integrateQuaternion(state.quaternion, state.angularVel + 2 * k2.angularVel, dt/6.0);
     Eigen::Vector4d q3 = integrateQuaternion(state.quaternion, state.angularVel + 2 * k3.angularVel, dt/6.0);
     Eigen::Vector4d q4 = integrateQuaternion(state.quaternion, state.angularVel + k4.angularVel, dt/6.0);
-    
-    // Weighted average of quaternions with normalization
     nextState.quaternion = (q1 + 2 * q2 + 2 * q3 + q4).normalized();
     
     return nextState;

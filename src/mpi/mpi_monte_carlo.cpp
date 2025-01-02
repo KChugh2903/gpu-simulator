@@ -26,35 +26,30 @@ void MPIMonteCarlo::finalizeMPI() {
 }
 
 void MPIMonteCarlo::createMPITypes() {
-    // Create MPI type for Dynamics::State
     {
         MPI_Datatype types[] = {MPI_DOUBLE, MPI_DOUBLE, MPI_DOUBLE, MPI_DOUBLE};
-        int blocklengths[] = {3, 3, 4, 3};  // Vector3d, Vector3d, Vector4d, Vector3d
+        int blocklengths[] = {3, 3, 4, 3};  
         MPI_Aint offsets[4];
         
-        // Get offsets for each member
         Dynamics::State temp;
         MPI_Get_address(&temp.position, &offsets[0]);
         MPI_Get_address(&temp.velocity, &offsets[1]);
         MPI_Get_address(&temp.quaternion, &offsets[2]);
         MPI_Get_address(&temp.angularVel, &offsets[3]);
         
-        // Make offsets relative to start of structure
         MPI_Aint base;
         MPI_Get_address(&temp, &base);
         for(int i = 0; i < 4; i++) {
             offsets[i] = MPI_Aint_diff(offsets[i], base);
         }
         
-        // Create and commit type
         MPI_Type_create_struct(4, blocklengths, offsets, types, &mpiStateType);
         MPI_Type_commit(&mpiStateType);
     }
     
-    // Create MPI type for SimulationResult
     {
         MPI_Datatype types[] = {mpiStateType, MPI_DOUBLE, MPI_DOUBLE, MPI_DOUBLE};
-        int blocklengths[] = {1, 1, 1, 1};  // trajectory size will be handled separately
+        int blocklengths[] = {1, 1, 1, 1}; 
         MPI_Aint offsets[4];
         
         MonteCarlo::SimulationResult temp;
@@ -75,11 +70,8 @@ void MPIMonteCarlo::createMPITypes() {
 }
 
 void MPIMonteCarlo::distributeWork(int totalRuns, int& localStart, int& localCount) {
-    // Calculate base number of runs per process
     int runsPerProcess = totalRuns / numProcesses;
     int remainingRuns = totalRuns % numProcesses;
-    
-    // Distribute remaining runs among first few processes
     if (rank < remainingRuns) {
         localCount = runsPerProcess + 1;
         localStart = rank * localCount;
@@ -93,20 +85,13 @@ void MPIMonteCarlo::distributeWork(int totalRuns, int& localStart, int& localCou
 std::vector<MonteCarlo::SimulationResult> MPIMonteCarlo::runDistributedSimulations(int totalRuns) {
     int localStart, localCount;
     distributeWork(totalRuns, localStart, localCount);
-    
-    // Run local simulations
     std::vector<MonteCarlo::SimulationResult> localResults = mc.runSimulations(localCount);
-    
-    // Gather all results to root process
     return gatherSimulationResults(localResults);
 }
 
 std::vector<MonteCarlo::SimulationResult> MPIMonteCarlo::gatherSimulationResults(
     const std::vector<MonteCarlo::SimulationResult>& localResults) {
-    
     std::vector<MonteCarlo::SimulationResult> allResults;
-    
-    // First gather counts of results from each process
     int localSize = localResults.size();
     std::vector<int> allSizes(numProcesses);
     
@@ -115,27 +100,21 @@ std::vector<MonteCarlo::SimulationResult> MPIMonteCarlo::gatherSimulationResults
                0, MPI_COMM_WORLD);
     
     if (rank == 0) {
-        // Calculate total size and prepare to receive
         int totalSize = 0;
         for (int size : allSizes) {
             totalSize += size;
         }
         allResults.resize(totalSize);
-        
-        // Calculate displacements for gathering
         std::vector<int> displacements(numProcesses);
         int currentDisp = 0;
         for (int i = 0; i < numProcesses; i++) {
             displacements[i] = currentDisp;
             currentDisp += allSizes[i];
         }
-        
-        // Gather all results
         MPI_Gatherv(localResults.data(), localSize, mpiResultType,
                     allResults.data(), allSizes.data(), displacements.data(),
                     mpiResultType, 0, MPI_COMM_WORLD);
     } else {
-        // Non-root processes just send their data
         MPI_Gatherv(localResults.data(), localSize, mpiResultType,
                     nullptr, nullptr, nullptr,
                     mpiResultType, 0, MPI_COMM_WORLD);

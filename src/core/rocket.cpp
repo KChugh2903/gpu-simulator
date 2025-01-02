@@ -4,7 +4,6 @@
 #include <algorithm>
 
 Rocket::Rocket() {
-    // Initialize with zero values
     props.wetMass = 0.0;
     props.dryMass = 0.0;
     props.wetMOI = Eigen::Matrix3d::Zero();
@@ -55,8 +54,6 @@ void Rocket::setThrustCurve(const std::vector<std::pair<double, double>>& curve)
 
 double Rocket::getThrust(double t) const {
     if (t < 0 || props.thrustCurve.empty()) return 0.0;
-    
-    // Find the appropriate thrust value using linear interpolation
     auto it = std::lower_bound(props.thrustCurve.begin(), props.thrustCurve.end(), 
                              std::make_pair(t, 0.0),
                              [](const auto& a, const auto& b) { return a.first < b.first; });
